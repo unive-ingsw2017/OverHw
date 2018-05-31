@@ -1,0 +1,23 @@
+------ Realizzazione GUI------
+
+*Alpha-Test -WhiteBox*
+
+MARZO
+
+- Problemi in apertura HomeActivity 
+- NullPointEx al tap in benchmark 
+- Problemi  nell'inserimento nel db sql del file .csv relativo ai dati dei comuni
+- Risolto problema implementando il file con HeidiSQL
+
+APRILE
+
+- Errori nel codice php trovati tramite log di sistema sul server dedicato 
+- Errori dopo l'implementazioni test di connessione in apertura app 
+- Errori nel carimento delle texture dei pulsanti customizzati nel benchmark 
+
+
+*Beta-Test GreyBox*
+
+MAGGIO
+- Problemi con la sequenza di tutorial 
+- Implementato salvataggio della città nelle sharedPreferences per una migliore l'esperienza utente 

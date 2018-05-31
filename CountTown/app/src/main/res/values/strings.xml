@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">CountTown</string>
+
+    <!-- HOME -->
+    <string name="homeDescription">Descrizione Home</string>
+    <string name="insertCity">Inserisci comune</string>
+
+
+    <!-- DATI INTERNI -->
+    <string name="hintEditTextToolbar">Comune non valido</string>
+    <string name="nome">Nome città</string>
+    <string name="codiceIstat">Codice Istat</string>
+    <string name="provincia">Provincia</string>
+    <string name="siglaProvincia">Sigla Provincia</string>
+    <string name="regione">Regione</string>
+    <string name="areaGeo">Area geografica</string>
+    <string name="popResidente">Popolazione residente</string>
+    <string name="popStraniera">Popolazione straniera</string>
+    <string name="densDemo">Densità demografica</string>
+    <string name="supKmQ">Superficie Kmq</string>
+    <string name="altezzaCentro">Altezza centro</string>
+    <string name="altezzaMinima">Altezza minima</string>
+    <string name="altezzaMassima">Altezza massima</string>
+    <string name="zonaAltimetria">Zona altimetrica</string>
+    <string name="zonaSismica">Zona sismica</string>
+    <string name="tipoComune">Tipo comune</string>
+    <string name="gradoUrbanizzazione">Grado urbanizzazione</string>
+    <string name="indiceMontanita">Indice montanità</string>
+    <string name="zonaClimatica">Zona climatica</string>
+    <string name="classeComune">Classe comune</string>
+    <string name="latitudine">Latitudine</string>
+    <string name="longitudine">Longitudine</string>
+    <string name="title_activity_maps2">Map</string>
+    <string name="comune_1">Comune 1</string>
+    <string name="comune_2">Comune 2</string>
+    <string name="benchmark_multiplo_sul_comune_di">Benchmark multiplo sul comune di :</string>
+</resources>

@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lightgray"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/benchmark_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ToolbarColoredWhiteArrow"
+        android:descendantFocusability="beforeDescendants"
+        android:focusableInTouchMode="true">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/ben_comuni_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_back_arrow"
+                android:background="@android:color/transparent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/ben_comune"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="16dp"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:text="Benchmark"
+                android:gravity="center_vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ben_comuni_back"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/ben_comune_card1"
+                android:layout_width="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="190dp"
+                android:layout_margin="10dp"
+
+                android:clickable="true"
+                android:focusable="true">
+
+
+         <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="@drawable/bencomuneombra"
+                    android:elevation="20dp">
+            <TextView
+                android:id="@+id/benchDescrizione"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="5dp"
+                android:padding="5dp"
+                android:text="Benchmark relativo al comune di:"
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:fontFamily="@font/geosans_light"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/benchNcomune"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="5dp"
+                android:text="Nome"
+                android:textColor="#FF1F35"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textStyle="italic" />
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Range di abitanti:"
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:fontFamily="@font/geosans_light"/>
+
+            <TextView
+                android:id="@+id/textview1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:textColor="#FF1F35"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textStyle="italic" />
+
+            <SeekBar
+                android:id="@+id/seekBar1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="5dp"
+                android:max="10000"
+                android:progress="5000" />
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <Button
+                android:id="@+id/startBench"
+                android:layout_width="120dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/button_shape_ben1"
+                android:shadowColor="#A8A8A8"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:text="START"
+                android:textColor="#050505"
+                android:textSize="20sp"
+                android:fontFamily="@font/dimis"/>
+
+            <Button
+                android:id="@+id/benchComune0"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+
+                android:layout_gravity="center_horizontal"
+                android:padding="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bencomuneombra2"
+                android:textColor="#000000"
+                android:textSize="12dp"
+                android:layout_height="35dp"
+                android:text="1° COMUNE"
+                android:textColorHint="#000000"
+                android:textStyle="bold"
+                android:fontFamily="@font/geosans_light_oblique"/>
+
+            <Button
+                android:id="@+id/benchComune1"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:padding="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bencomuneombra2"
+                android:textColor="#000000"
+                android:textSize="12dp"
+                android:layout_height="35dp"
+                android:text="2° COMUNE"
+                android:textColorHint="#000000"
+                android:textStyle="bold"
+                android:fontFamily="@font/geosans_light_oblique"/>
+
+            <Button
+                android:id="@+id/benchComune2"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:padding="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bencomuneombra2"
+                android:textColor="#000000"
+                android:textSize="12dp"
+                android:layout_height="35dp"
+                android:text="3° COMUNE"
+                android:textColorHint="#000000"
+                android:textStyle="bold"
+                android:fontFamily="@font/geosans_light_oblique"/>
+
+            <Button
+                android:id="@+id/benchComune3"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:padding="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bencomuneombra2"
+                android:textColor="#000000"
+                android:textSize="12dp"
+                android:layout_height="35dp"
+                android:text="4° COMUNE"
+                android:textColorHint="#000000"
+                android:textStyle="bold"
+                android:fontFamily="@font/geosans_light_oblique"/>
+
+            <Button
+                android:id="@+id/benchComune4"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:padding="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bencomuneombra2"
+                android:textColor="#000000"
+                android:textSize="12dp"
+                android:layout_height="35dp"
+                android:text="5° COMUNE"
+                android:textColorHint="#000000"
+                android:textStyle="bold"
+                android:fontFamily="@font/geosans_light_oblique"/>
+
+        </LinearLayout>
+
+
+
+
+
+</LinearLayout>

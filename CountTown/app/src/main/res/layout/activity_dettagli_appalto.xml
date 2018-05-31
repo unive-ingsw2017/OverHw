@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.overhw.counttown.DettagliAppaltoActivity"
+    android:background="@color/lightgray">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/dettagli_appalto_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ToolbarColoredWhiteArrow"
+        android:descendantFocusability="beforeDescendants"
+        android:focusableInTouchMode="true">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/dettagli_appalto_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_back_arrow"
+                android:background="@android:color/transparent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/dettagli_appalto_comune"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="16dp"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:gravity="center_vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/dettagli_appalto_back"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/dettagli_appalto_toolbar"
+        android:padding="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/id_gara"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ID_GARA"
+                android:paddingBottom="5dp"/>
+
+            <TextView
+                android:id="@+id/codice_fiscale_appaltante"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CODICE_FISCALE_APPALTANTE"
+                android:paddingBottom="5dp"/>
+
+            <TextView
+                android:id="@+id/denominazione_stazione_appaltante"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DENOMINAZIONE_STAZIONE_APPALTANTE"
+                android:paddingBottom="5dp"/>
+
+            <TextView
+                android:id="@+id/data_pubb_bando"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DATA_PUBBLICAZIONE_BANDO"
+                android:paddingBottom="5dp"/>
+
+            <TextView
+                android:id="@+id/tipo_bando"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TIPO_BANDO"
+                android:paddingBottom="5dp"/>
+
+            <TextView
+                android:id="@+id/tipo_settore"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TIPO_SETTORE"
+                android:paddingBottom="5dp"/>
+
+            <TextView
+                android:id="@+id/infr_strategica"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="INFRASTRUTTURA_STRATEGICA"
+                android:paddingBottom="5dp"/>
+
+            <TextView
+                android:id="@+id/oggetto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="OGGETTO"
+                android:paddingBottom="5dp"/>
+
+            <TextView
+                android:id="@+id/tipo_intervento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TIPO_INTERVENTO"
+                android:paddingBottom="5dp"/>
+
+            <TextView
+                android:id="@+id/luogo_esecuzione"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="LUOGO_ESECUZIONE"
+                android:paddingBottom="5dp"/>
+
+            <TextView
+                android:id="@+id/importo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="IMPORTO"
+                android:paddingBottom="5dp"/>
+
+            <TextView
+                android:id="@+id/categoria"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CATEGORIA"
+                android:paddingBottom="5dp" />
+
+            <TextView
+                android:id="@+id/classe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CLASSE"
+                android:paddingBottom="5dp"/>
+
+            <TextView
+                android:id="@+id/imp_lavori"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="IMPORTO_LAVORI"
+                android:paddingBottom="5dp"/>
+
+            <TextView
+                android:id="@+id/tipo_procedura"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TIPO_PROCEDURA"
+                android:paddingBottom="5dp"/>
+
+            <TextView
+                android:id="@+id/asta_elettronica"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ASTA_ELETTRONICA"
+                android:paddingBottom="5dp"/>
+
+            <TextView
+                android:id="@+id/forcella"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="FORCELLA"
+                android:paddingBottom="5dp"/>
+
+            <TextView
+                android:id="@+id/appalto_riservato"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="APPALTO_RISERVATO"
+                android:paddingBottom="5dp"/>
+
+            <TextView
+                android:id="@+id/termine_ridotto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TERMINE_RIDOTTO"
+                android:paddingBottom="5dp"/>
+
+            <TextView
+                android:id="@+id/fp_durata_conc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="FP_DURATA_CONCESSIONE"
+                android:paddingBottom="5dp"/>
+
+            <TextView
+                android:id="@+id/fp_note"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="FP_NOTE"
+                android:paddingBottom="5dp"/>
+
+            <TextView
+                android:id="@+id/url"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="URL"
+                android:paddingBottom="5dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

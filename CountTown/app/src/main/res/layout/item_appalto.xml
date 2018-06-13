@@ -3,55 +3,82 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="8dp"
-    android:orientation="vertical" >
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:orientation="vertical">
 
-    <LinearLayout
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingBottom="8dp"
-        android:paddingEnd="16dp"
-        android:paddingStart="16dp">
+        android:layout_margin="8dp"
+        card_view:cardCornerRadius="8dp"
+        card_view:cardElevation="4dp"
+        card_view:cardMaxElevation="6dp">
 
-        <TextView
-            android:id="@+id/item_appalto_id_gara"
+        <FrameLayout
+            android:id="@+id/frame_item_appalto"
+            android:background="@drawable/round_corner_frame_red"
+            android:layout_width="8dp"
+            android:layout_height="match_parent"/>
+
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="ID GARA"
-            android:textStyle="bold" />
+            android:layout_marginTop="8dp"
+            android:orientation="vertical" >
 
-        <TextView
-            android:id="@+id/item_appalto_data_pubb"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_weight="1"
-            android:gravity="end"
-            android:text="DATA PUBBLICAZIONE" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="8dp"
+                android:paddingEnd="16dp"
+                android:paddingStart="16dp">
 
-    </LinearLayout>
+                <TextView
+                    android:id="@+id/item_appalto_id_gara"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="ID GARA"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/item_appalto_data_pubb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="DATA PUBBLICAZIONE" />
+
+            </LinearLayout>
 
 
-    <TextView
-        android:id="@+id/item_appalto_tipo_intervento"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingBottom="8dp"
-        android:paddingEnd="16dp"
-        android:paddingStart="16dp"
-        android:text="TIPO INTERVENTO" />
+            <TextView
+                android:id="@+id/item_appalto_tipo_intervento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:paddingEnd="16dp"
+                android:paddingStart="16dp"
+                android:text="TIPO INTERVENTO" />
 
-    <TextView
-        android:id="@+id/item_appalto_denom_staz_appaltante"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:autoSizeTextType="uniform"
-        android:paddingBottom="8dp"
-        android:paddingEnd="16dp"
-        android:paddingStart="16dp"
-        android:text="DENOMINAZIONE STAZIONE APPALTANTE" />
+            <TextView
+                android:id="@+id/item_appalto_denom_staz_appaltante"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autoSizeTextType="uniform"
+                android:paddingBottom="8dp"
+                android:paddingEnd="16dp"
+                android:paddingStart="16dp"
+                android:text="DENOMINAZIONE STAZIONE APPALTANTE" />
+
+
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
 
     <View
         android:id="@+id/view"

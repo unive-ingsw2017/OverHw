@@ -19,6 +19,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -33,7 +34,7 @@ public class ListaAppaltiActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private ImageButton back;
     private TextView citta;
-    private Spinner spinner;
+    private Spinner spinner, spinnerTipo;
 
     private RecyclerView recyclerView;
     private RecyclerViewAdapter adapter;
@@ -85,6 +86,23 @@ public class ListaAppaltiActivity extends AppCompatActivity {
             }
         });
 
+
+        spinnerTipo = findViewById(R.id.spinner_tipo_appalto);
+        ArrayAdapter adapterTipo= ArrayAdapter.createFromResource(this, R.array.tipoappalti, R.layout.spinner_item);
+        adapterTipo.setDropDownViewResource(R.layout.spinner_item);
+        spinnerTipo.setAdapter(adapterTipo);
+        spinnerTipo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                refreshData();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parentView) {
+                // your code here
+            }
+        });
+
         String city = null;
         Bundle extras = getIntent().getExtras();
         if(extras != null) {
@@ -111,6 +129,21 @@ public class ListaAppaltiActivity extends AppCompatActivity {
             AlertDialog alertDialog = dialog.create();
             alertDialog.show();
         }
+    }
+
+    private void refreshData(){
+        ArrayList<Appalto> appalti = new ArrayList<>();
+        int i=0;
+        while(i<DatiComuni.appalti.size()){
+            if(DatiComuni.appalti.get(i).getTipoBando().equalsIgnoreCase(spinnerTipo.getSelectedItem().toString()) && !spinnerTipo.getSelectedItem().toString().equalsIgnoreCase("Tutti")){
+                appalti.add(DatiComuni.appalti.get(i));
+            }else if(spinnerTipo.getSelectedItem().toString().equalsIgnoreCase("Tutti")){
+                appalti.add(DatiComuni.appalti.get(i));
+            }
+            i++;
+        }
+        RecyclerViewAdapter newAdapter = new RecyclerViewAdapter(appalti, this);
+        recyclerView.swapAdapter(newAdapter, true);
     }
 
     private void searchCityContracts(String s) {
@@ -214,6 +247,8 @@ public class ListaAppaltiActivity extends AppCompatActivity {
             }
             searchCityContracts(citta.getText().toString());
             pDialog.dismiss();
+
+            refreshData();
         }
     }
 }

@@ -17,4 +17,7 @@ public class DatiComuni extends AppCompatActivity{
 
     /* lista di 5 comuni utilizzati dal benchmark */
     protected static String[] ben_comuni = new String[5];
+
+    /* lista appalti per il comune selezionato da confrontare con il comune salvato */
+    protected static ArrayList<Appalto> appalti_comune_confronto = new ArrayList<>();
 }

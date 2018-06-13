@@ -197,9 +197,9 @@ public class HomeActivity extends AppCompatActivity {
         else{                      /*Chiude l'app in assenza di connessione*/
             dialogConnection();
         }
-
-
     }
+
+
 
     // controlla che la connessione sia attiva (true) o disattivata (false)
     private boolean testConnection(){
@@ -207,6 +207,8 @@ public class HomeActivity extends AppCompatActivity {
         NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
         return activeNetwork != null && activeNetwork.isConnectedOrConnecting();
     }
+
+
 
     // apre un alert dialog per indicare all'utente che la connessione ad internet è lenta o assente
     private void dialogConnection(){
@@ -233,12 +235,15 @@ public class HomeActivity extends AppCompatActivity {
         dialog.show();
     }
 
+
+
     /**-------------------------------------------- CLASSE PER SCARICARE IL FILE TOWNS_DETAILS.CSV ---------------------------------------------*/
 
     class DetailsEcho extends AsyncTask<String, Integer, String> {
         ProgressDialog pDialog;
         HttpURLConnection conn;
         URL url = null;
+
 
         @Override
         protected void onPreExecute(){
@@ -250,6 +255,7 @@ public class HomeActivity extends AppCompatActivity {
             pDialog.setCancelable(false);
             pDialog.show();
         }
+
 
 
         @Override

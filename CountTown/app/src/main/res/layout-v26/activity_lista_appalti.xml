@@ -14,7 +14,8 @@
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="@style/ToolbarColoredWhiteArrow"
-        android:focusableInTouchMode="true">
+        android:focusableInTouchMode="true"
+        android:elevation="4dp">
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
@@ -41,18 +42,16 @@
                 android:layout_margin="8dp"
                 android:background="@android:color/transparent"
                 android:fitsSystemWindows="true"
-                android:focusedByDefault="false"
                 android:hint="@string/hintEditTextToolbar"
-                android:paddingBottom="8dp"
                 android:paddingStart="8dp"
                 android:textColor="@color/textColorPrimary"
                 android:textColorHint="@color/textColorHint"
                 android:textSize="18sp"
                 android:textStyle="italic"
-                app:layout_constraintBottom_toTopOf="@+id/spinner_lista_appalti"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/view"
                 app:layout_constraintStart_toEndOf="@+id/lista_appalti_back_button"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"/>
 
             <View
                 android:id="@+id/view"
@@ -63,22 +62,46 @@
                 android:background="@android:color/white"
                 android:paddingEnd="8dp"
                 android:paddingStart="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/lista_appalti_edittext_citta"
                 app:layout_constraintBottom_toTopOf="@+id/spinner_lista_appalti"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/lista_appalti_back_button"
-                app:layout_constraintTop_toBottomOf="@+id/lista_appalti_edittext_citta" />
+                app:layout_constraintEnd_toEndOf="parent" />
 
             <Spinner
                 android:id="@+id/spinner_lista_appalti"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:background="@color/colorPrimary"
                 android:entries="@array/anniappalti"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view"
+                app:layout_constraintBottom_toTopOf="@+id/view2"
                 app:layout_constraintStart_toEndOf="@+id/lista_appalti_back_button"
-                app:layout_constraintTop_toBottomOf="@+id/lista_appalti_edittext_citta" />
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:background="@android:color/white"
+                android:paddingEnd="8dp"
+                android:paddingStart="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/spinner_lista_appalti"
+                app:layout_constraintBottom_toTopOf="@+id/spinner_tipo_appalto"
+                app:layout_constraintStart_toEndOf="@+id/lista_appalti_back_button"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <Spinner
+                android:id="@+id/spinner_tipo_appalto"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:entries="@array/tipoappalti"
+                app:layout_constraintTop_toBottomOf="@+id/view2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/lista_appalti_back_button"
+                app:layout_constraintEnd_toEndOf="parent"/>
 
         </android.support.constraint.ConstraintLayout>
 

@@ -7,8 +7,8 @@ import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -18,6 +18,7 @@ class RecyclerViewHolder extends RecyclerView.ViewHolder implements View.OnLongC
     public TextView idGara;
     public TextView dataPubblicazione;
     public TextView denomStazApp;
+    public FrameLayout frameLayout;
 
     private ItemClickListener itemClickListener;
 
@@ -27,6 +28,7 @@ class RecyclerViewHolder extends RecyclerView.ViewHolder implements View.OnLongC
         dataPubblicazione = itemView.findViewById(R.id.item_appalto_data_pubb);
         tipoIntervento = itemView.findViewById(R.id.item_appalto_tipo_intervento);
         denomStazApp = itemView.findViewById(R.id.item_appalto_denom_staz_appaltante);
+        frameLayout = itemView.findViewById(R.id.frame_item_appalto);
 
         itemView.setOnClickListener(this);
         itemView.setOnLongClickListener(this);
@@ -72,6 +74,21 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewHolder
         String newData = data.substring(9,11) + "/" + data.substring(6,8) + "/" + data.substring(1,5);
         holder.dataPubblicazione.setText(Html.fromHtml("<b>Data: </b>" + newData));
         holder.denomStazApp.setText(Html.fromHtml("<b>Denominazione stazione appaltante: </b><br/>\n" + listAppalti.get(position).getDenominazioneStazioneAppaltante()));
+
+        switch (listAppalti.get(position).getTipoBando()){
+            case "Lavori":
+                holder.frameLayout.setBackgroundResource(R.drawable.round_corner_frame_red);
+                break;
+            case "Servizi":
+                holder.frameLayout.setBackgroundResource(R.drawable.round_corner_frame_green);
+                break;
+            case "Forniture":
+                holder.frameLayout.setBackgroundResource(R.drawable.round_corner_frame_purple);
+                break;
+            default:
+                holder.frameLayout.setBackgroundResource(R.drawable.round_corner_frame_red);
+                break;
+        }
 
         holder.setItemClickListener(new ItemClickListener() {
             @Override
